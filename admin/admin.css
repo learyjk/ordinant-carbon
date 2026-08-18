@@ -22,16 +22,18 @@ html.need-login body {
   min-height: 100vh;
 }
 
-html.need-login #admin-app {
+html.need-login #admin-app,
+body.login-screen #admin-app {
   display: none !important;
 }
 
-html.need-login #login-gate {
-  display: block;
+#login-gate {
+  display: none !important;
 }
 
-#login-gate {
-  display: none;
+html.need-login #login-gate,
+body.login-screen #login-gate {
+  display: block !important;
 }
 
 body.login-screen {

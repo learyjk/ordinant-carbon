@@ -62,6 +62,10 @@
 
   if (home && !loggedIn()) {
     document.documentElement.classList.add("need-login");
+    document.addEventListener("DOMContentLoaded", function () {
+      document.body.classList.add("login-screen");
+      document.body.classList.remove("admin");
+    });
   }
 
   if (protectedPage && !loggedIn()) {

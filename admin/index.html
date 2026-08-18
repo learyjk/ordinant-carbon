@@ -15,6 +15,11 @@
   <meta name="robots" content="noindex, nofollow">
   <title>Dashboard &lsaquo; Ordinant Carbon Admin</title>
   <link rel="stylesheet" href="admin.css">
+  <style>
+    #login-gate { display: none !important; }
+    html.need-login #login-gate { display: block !important; }
+    html.need-login #admin-app { display: none !important; }
+  </style>
   <script src="auth.js"></script>
 </head>
 <body class="admin" data-screen="dashboard">
