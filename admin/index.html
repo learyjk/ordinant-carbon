@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-admin="home">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXLC18ZZ47"></script>
@@ -19,15 +19,53 @@
 </head>
 <body class="admin" data-screen="dashboard">
 
+  <div id="login-gate">
+    <div id="login">
+      <h1>
+        <a href="../index.html">
+          <img src="../ord-logo.png" alt="">
+          Ordinant<span>Carbon</span>
+        </a>
+      </h1>
+      <p class="login-tagline">Staff login</p>
+      <div id="login-error" class="login-error hidden">
+        The password you entered for this username is incorrect.
+      </div>
+      <form name="loginform" id="loginform" action="/admin/" method="post">
+        <p>
+          <label for="user_login">Username</label>
+          <input type="text" name="log" id="user_login" autocomplete="username" value="admin">
+        </p>
+        <p>
+          <label for="user_pass">Password</label>
+          <input type="password" name="pwd" id="user_pass" maxlength="1" autocomplete="current-password" autofocus>
+        </p>
+        <p class="forgetmenot">
+          <label><input name="rememberme" type="checkbox" id="rememberme" value="forever" checked> Remember Me</label>
+        </p>
+        <p class="submit">
+          <button type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large">Log In</button>
+        </p>
+      </form>
+      <p id="nav">
+        <a href="#">Lost your password?</a>
+      </p>
+      <p id="backtoblog">
+        <a href="../index.html">&larr; Back to Ordinant Carbon Solutions</a>
+      </p>
+    </div>
+  </div>
+
+  <div id="admin-app">
   <header class="admin-bar">
-    <a class="admin-bar-brand" href="index.html">
+    <a class="admin-bar-brand" href="/admin/">
       <img src="../ord-logo.png" alt="">Ordinant<span>Carbon</span> Admin
     </a>
     <ul class="admin-bar-links">
       <li><a href="../index.html">View Site</a></li>
       <li><a href="case-studies.html">Case Studies</a></li>
       <li><a href="#">Howdy, Admin</a></li>
-      <li><a href="login.html?logout=1">Log Out</a></li>
+      <li><a href="/admin/?logout=1">Log Out</a></li>
     </ul>
   </header>
 
@@ -35,7 +73,7 @@
     <aside class="admin-menu">
       <div class="menu-label">Main</div>
       <ul>
-        <li><a class="current" href="index.html">Dashboard</a></li>
+        <li><a class="current" href="/admin/">Dashboard</a></li>
         <li><a href="case-studies.html">Case Studies</a></li>
         <li><span class="dead">Pages</span></li>
         <li><span class="dead">Media</span></li>
@@ -102,7 +140,16 @@
     </main>
   </div>
 
+  </div>
+
   <script src="case-studies-data.js"></script>
   <script src="admin.js"></script>
+  <script>
+    window.ordinantAuth.bindLoginForm(
+      document.getElementById("loginform"),
+      document.getElementById("login-error"),
+      document.getElementById("user_pass")
+    );
+  </script>
 </body>
 </html>

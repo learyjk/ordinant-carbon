@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-admin="login">
 <head>
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-KXLC18ZZ47"></script>
@@ -31,7 +31,7 @@
       The password you entered for this username is incorrect.
     </div>
 
-    <form name="loginform" id="loginform" action="login.html" method="post">
+    <form name="loginform" id="loginform" action="/admin/" method="post">
       <p>
         <label for="user_login">Username</label>
         <input type="text" name="log" id="user_login" autocomplete="username" value="admin">
@@ -58,43 +58,11 @@
 
   <script src="auth.js"></script>
   <script>
-    (function () {
-      var params = new URLSearchParams(location.search);
-      if (params.get("logout") === "1") {
-        window.ordinantAuth.logout();
-      }
-
-      var form = document.getElementById("loginform");
-      var error = document.getElementById("login-error");
-      var password = document.getElementById("user_pass");
-
-      form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        if (password.value === "a") {
-          window.ordinantAuth.login();
-          var next = params.get("redirect") || "index.html";
-          var dest = (next.split("?")[0] || "").split("#")[0].replace(/\.html$/i, "");
-          if (
-            next.indexOf("..") !== -1 ||
-            next.indexOf("://") !== -1 ||
-            next.charAt(0) === "/" ||
-            !dest ||
-            dest === "login" ||
-            dest === "admin"
-          ) {
-            next = "index.html";
-          }
-          location.replace(next);
-          return;
-        }
-        error.classList.remove("hidden");
-        form.classList.remove("shake");
-        void form.offsetWidth;
-        form.classList.add("shake");
-        password.value = "";
-        password.focus();
-      });
-    })();
+    window.ordinantAuth.bindLoginForm(
+      document.getElementById("loginform"),
+      document.getElementById("login-error"),
+      document.getElementById("user_pass")
+    );
   </script>
 </body>
 </html>

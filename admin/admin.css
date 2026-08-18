@@ -14,6 +14,26 @@ body.admin {
   min-height: 100vh;
 }
 
+html.need-login body {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 14px;
+  color: #3d3b36;
+  background: #ebe7de;
+  min-height: 100vh;
+}
+
+html.need-login #admin-app {
+  display: none !important;
+}
+
+html.need-login #login-gate {
+  display: block;
+}
+
+#login-gate {
+  display: none;
+}
+
 body.login-screen {
   font-family: 'Open Sans', Arial, sans-serif;
   font-size: 14px;

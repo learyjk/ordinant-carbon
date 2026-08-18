@@ -1,32 +1,74 @@
 (function () {
   var KEY = "ordinant_admin_auth";
-
-  function pageName() {
-    var name = location.pathname.replace(/\/+$/, "").split("/").pop() || "";
-    name = name.replace(/\.html$/i, "");
-    if (!name || name === "admin") return "index";
-    return name;
-  }
+  var home = document.documentElement.getAttribute("data-admin") === "home";
+  var loginPage = document.documentElement.getAttribute("data-admin") === "login";
+  var protectedPage = document.documentElement.getAttribute("data-admin") === "protected";
 
   function loggedIn() {
-    return sessionStorage.getItem(KEY) === "1";
+    try {
+      return sessionStorage.getItem(KEY) === "1";
+    } catch (err) {
+      return false;
+    }
+  }
+
+  function login() {
+    try {
+      sessionStorage.setItem(KEY, "1");
+    } catch (err) {}
+  }
+
+  function logout() {
+    try {
+      sessionStorage.removeItem(KEY);
+    } catch (err) {}
+  }
+
+  if (/[?&]logout=1(?:&|$)/.test(location.search)) {
+    logout();
   }
 
   window.ordinantAuth = {
-    login: function () {
-      sessionStorage.setItem(KEY, "1");
-    },
-    logout: function () {
-      sessionStorage.removeItem(KEY);
-    },
+    login: login,
+    logout: logout,
     ok: loggedIn,
-    pageName: pageName
+    bindLoginForm: function (form, error, password) {
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (password.value === "a") {
+          login();
+          if (home) {
+            document.documentElement.classList.remove("need-login");
+            document.body.className = "admin";
+            var gate = document.getElementById("login-gate");
+            var app = document.getElementById("admin-app");
+            if (gate) gate.hidden = true;
+            if (app) app.hidden = false;
+            history.replaceState({}, "", "/admin/");
+            return;
+          }
+          location.replace("/admin/");
+          return;
+        }
+        error.classList.remove("hidden");
+        form.classList.remove("shake");
+        void form.offsetWidth;
+        form.classList.add("shake");
+        password.value = "";
+        password.focus();
+      });
+    }
   };
 
-  if (pageName() === "login") return;
+  if (home && !loggedIn()) {
+    document.documentElement.classList.add("need-login");
+  }
 
-  if (!loggedIn()) {
-    var next = pageName() + ".html" + location.search + location.hash;
-    location.replace("login.html?redirect=" + encodeURIComponent(next));
+  if (protectedPage && !loggedIn()) {
+    location.replace("/admin/");
+  }
+
+  if (loginPage && loggedIn()) {
+    location.replace("/admin/");
   }
 })();
