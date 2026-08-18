@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Case Studies &lsaquo; Ordinant Carbon Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="auth.js"></script>
+</head>
+<body class="admin" data-screen="list">
+
+  <header class="admin-bar">
+    <a class="admin-bar-brand" href="index.html">
+      <img src="../ord-logo.png" alt="">Ordinant<span>Carbon</span> Admin
+    </a>
+    <ul class="admin-bar-links">
+      <li><a href="../index.html">View Site</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="#">Howdy, Admin</a></li>
+      <li><a href="login.html?logout=1">Log Out</a></li>
+    </ul>
+  </header>
+
+  <div class="admin-shell">
+    <aside class="admin-menu">
+      <div class="menu-label">Main</div>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a class="current" href="case-studies.html">Case Studies</a></li>
+        <li><span class="dead">Pages</span></li>
+        <li><span class="dead">Media</span></li>
+        <li><span class="dead">Comments</span></li>
+      </ul>
+      <div class="menu-label">Appearance</div>
+      <ul>
+        <li><span class="dead">Themes</span></li>
+        <li><span class="dead">Menus</span></li>
+        <li><span class="dead">Plugins</span></li>
+        <li><span class="dead">Users</span></li>
+        <li><span class="dead">Settings</span></li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <div class="wrap">
+        <h1>
+          Case Studies
+          <a class="page-title-action" href="case-study.html">Add New</a>
+        </h1>
+
+        <ul class="subsubsub">
+          <li><a href="#" class="current" data-status="all">All <span class="count">(21)</span></a> |</li>
+          <li><a href="#" data-status="publish">Published <span class="count">(20)</span></a> |</li>
+          <li><a href="#" data-status="draft">Draft <span class="count">(1)</span></a></li>
+        </ul>
+
+        <div class="tablenav">
+          <select id="bulk-action">
+            <option value="-1">Bulk Actions</option>
+            <option value="edit">Edit</option>
+            <option value="trash">Move to Trash</option>
+          </select>
+          <button type="button" class="button" id="doaction">Apply</button>
+          <select id="sector-filter">
+            <option value="">All sectors</option>
+            <option value="hospitality">Hospitality</option>
+            <option value="property development">Property Development</option>
+            <option value="professional services">Professional Services</option>
+            <option value="education">Education</option>
+            <option value="multi-location services">Multi-location Services</option>
+          </select>
+          <button type="button" class="button" id="do-filter">Filter</button>
+          <label class="screen-reader-text" for="post-search">Search case studies</label>
+          <input id="post-search" type="search" placeholder="Search case studies">
+          <a class="button button-primary" href="ordinant-carbon-case-studies-source-export.csv" download="ordinant-carbon-case-studies-source-export.csv">Export CSV</a>
+          <span class="tablenav-pages"><span id="displaying-num">21</span> items</span>
+        </div>
+
+        <div class="wp-list-table-wrap">
+          <table class="wp-list-table">
+            <thead>
+              <tr>
+                <th class="check-column"><input type="checkbox"></th>
+                <th class="column-image"></th>
+                <th>Title</th>
+                <th>Author</th>
+                <th>Sector</th>
+                <th>Status</th>
+                <th>Date</th>
+              </tr>
+            </thead>
+            <tbody id="the-list"></tbody>
+          </table>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="case-studies-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Dashboard &lsaquo; Ordinant Carbon Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="auth.js"></script>
+</head>
+<body class="admin" data-screen="dashboard">
+
+  <header class="admin-bar">
+    <a class="admin-bar-brand" href="index.html">
+      <img src="../ord-logo.png" alt="">Ordinant<span>Carbon</span> Admin
+    </a>
+    <ul class="admin-bar-links">
+      <li><a href="../index.html">View Site</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="#">Howdy, Admin</a></li>
+      <li><a href="login.html?logout=1">Log Out</a></li>
+    </ul>
+  </header>
+
+  <div class="admin-shell">
+    <aside class="admin-menu">
+      <div class="menu-label">Main</div>
+      <ul>
+        <li><a class="current" href="index.html">Dashboard</a></li>
+        <li><a href="case-studies.html">Case Studies</a></li>
+        <li><span class="dead">Pages</span></li>
+        <li><span class="dead">Media</span></li>
+        <li><span class="dead">Comments</span></li>
+      </ul>
+      <div class="menu-label">Appearance</div>
+      <ul>
+        <li><span class="dead">Themes</span></li>
+        <li><span class="dead">Menus</span></li>
+        <li><span class="dead">Plugins</span></li>
+        <li><span class="dead">Users</span></li>
+        <li><span class="dead">Settings</span></li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <div class="wrap">
+        <h1>Dashboard</h1>
+        <div class="notice notice-info">
+          <p>This is a local content desk for Ordinant Carbon Solutions. There is no CMS connected &mdash; use <strong>Export CSV</strong> on Case Studies to download the current source file.</p>
+        </div>
+
+        <div class="dashboard-widgets">
+          <section class="postbox">
+            <h2>At a Glance</h2>
+            <div class="postbox-inside">
+              <ul class="at-a-glance">
+                <li><strong id="count-all">21</strong> Case Studies</li>
+                <li><strong id="count-published">20</strong> Published</li>
+                <li><strong id="count-drafts">1</strong> Draft</li>
+                <li><strong>4</strong> Pages</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="postbox">
+            <h2>Case Studies</h2>
+            <div class="postbox-inside">
+              <p style="margin-bottom: 12px;">Manage customer stories, export the source file, or open an item to review its fields.</p>
+              <a class="button button-primary" href="case-studies.html">View Case Studies</a>
+              <a class="button" href="ordinant-carbon-case-studies-source-export.csv" download="ordinant-carbon-case-studies-source-export.csv">Export CSV</a>
+            </div>
+          </section>
+
+          <section class="postbox">
+            <h2>Recently Edited</h2>
+            <div class="postbox-inside">
+              <ul class="recent-list" id="recent-case-studies"></ul>
+            </div>
+          </section>
+
+          <section class="postbox">
+            <h2>Quick Draft</h2>
+            <div class="postbox-inside quickdraft">
+              <label class="screen-reader-text" for="quick-title">Title</label>
+              <input id="quick-title" type="text" placeholder="Title">
+              <label class="screen-reader-text" for="quick-content">Content</label>
+              <textarea id="quick-content" placeholder="What&rsquo;s on your mind?"></textarea>
+              <button type="button" class="button">Save Draft</button>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script src="case-studies-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

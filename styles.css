@@ -380,6 +380,8 @@ section.alt-bg {
   background: #ffffff;
   color: #66645f;
   font-size: 13px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  cursor: pointer;
 }
 
 .sector-filter .filter-btn.active {
@@ -397,14 +399,49 @@ section.alt-bg {
 .case-study-card-full {
   flex: 1 1 45%;
   min-width: 320px;
+  max-width: calc(50% - 12px);
   background: #ffffff;
   border: 1px solid #e6e6e6;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
   border-radius: 4px;
   padding: 26px 28px;
+  color: inherit;
+  display: block;
 }
 
-.case-study-card-full .sector-tag {
+.case-study-card-full[hidden] {
+  display: none;
+}
+
+a.case-study-card-full:hover {
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.14);
+}
+
+.case-study-card-full.has-image {
+  padding: 0;
+}
+
+.case-study-card-full .card-image {
+  height: 168px;
+  overflow: hidden;
+  background: #d4cdc0;
+  border-radius: 4px 4px 0 0;
+}
+
+.case-study-card-full .card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.case-study-card-full.has-image .card-body {
+  padding: 22px 28px 26px;
+}
+
+.case-study-card-full .sector-tag,
+.detail-meta .sector-tag {
   display: inline-block;
   background: #f1f3f4;
   color: #66645f;
@@ -414,13 +451,43 @@ section.alt-bg {
   padding: 4px 10px;
   border-radius: 3px;
   margin-bottom: 14px;
+  margin-right: 8px;
+}
+
+.case-study-card-full .status-tag,
+.detail-meta .status-tag {
+  display: inline-block;
+  background: #f4e6dc;
+  color: #992e00;
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 4px 10px;
+  border-radius: 3px;
+  margin-bottom: 14px;
+  margin-right: 8px;
+}
+
+.case-study-card-full h3 {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 18px;
+  color: #1a1917;
+  margin-bottom: 10px;
+  line-height: 1.35;
 }
 
 .case-study-card-full p.quote {
-  font-size: 16px;
+  font-size: 15px;
   color: #66645f;
-  margin-bottom: 16px;
+  margin-bottom: 14px;
   line-height: 1.5;
+}
+
+.case-study-card-full .stat {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #992e00;
+  margin-bottom: 12px;
 }
 
 .case-study-card-full .role {
@@ -431,6 +498,88 @@ section.alt-bg {
 
 .case-study-card-full .org {
   font-size: 13.5px;
+  color: #7d7a73;
+}
+
+.case-study-card-full .read-more {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #992e00;
+}
+
+.case-study-detail {
+  max-width: 760px;
+}
+
+.detail-back {
+  font-size: 14px;
+  margin-bottom: 16px;
+}
+
+.detail-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 4px;
+  font-size: 13.5px;
+  color: #7d7a73;
+  max-width: none;
+}
+
+.detail-meta .sector-tag,
+.detail-meta .status-tag {
+  margin-bottom: 0;
+}
+
+.detail-image {
+  width: 100%;
+  max-height: 380px;
+  object-fit: cover;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 24px;
+  display: block;
+  background: #d4cdc0;
+}
+
+.detail-stat {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #992e00;
+  margin-bottom: 22px;
+}
+
+.detail-content p {
+  font-size: 15.5px;
+  color: #66645f;
+  margin-bottom: 16px;
+}
+
+.detail-client {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid #e6e6e6;
+}
+
+.detail-client h2 {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 15px;
+  color: #1a1917;
+  margin-bottom: 8px;
+}
+
+.detail-client p {
+  font-size: 14.5px;
+  color: #66645f;
+  line-height: 1.55;
+}
+
+.detail-author {
+  margin-top: 18px;
+  font-size: 13px;
   color: #7d7a73;
 }
 
@@ -693,7 +842,7 @@ footer.site-footer {
   background: #f1f3f4;
   border-top: 1px solid #e2e2e2;
   padding: 40px 0 24px;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 .footer-cols {
@@ -739,6 +888,10 @@ footer.site-footer {
 }
 
 @media (max-width: 700px) {
+  .case-study-card-full {
+    max-width: 100%;
+  }
+
   .hero-inner,
   .contact-layout {
     flex-direction: column;

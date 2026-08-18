@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Edit Case Study &lsaquo; Ordinant Carbon Admin</title>
+  <link rel="stylesheet" href="admin.css">
+  <script src="auth.js"></script>
+</head>
+<body class="admin" data-screen="edit">
+
+  <header class="admin-bar">
+    <a class="admin-bar-brand" href="index.html">
+      <img src="../ord-logo.png" alt="">Ordinant<span>Carbon</span> Admin
+    </a>
+    <ul class="admin-bar-links">
+      <li><a href="../index.html">View Site</a></li>
+      <li><a href="case-studies.html">Case Studies</a></li>
+      <li><a href="#">Howdy, Admin</a></li>
+      <li><a href="login.html?logout=1">Log Out</a></li>
+    </ul>
+  </header>
+
+  <div class="admin-shell">
+    <aside class="admin-menu">
+      <div class="menu-label">Main</div>
+      <ul>
+        <li><a href="index.html">Dashboard</a></li>
+        <li><a class="current" href="case-studies.html">Case Studies</a></li>
+        <li><span class="dead">Pages</span></li>
+        <li><span class="dead">Media</span></li>
+        <li><span class="dead">Comments</span></li>
+      </ul>
+      <div class="menu-label">Appearance</div>
+      <ul>
+        <li><span class="dead">Themes</span></li>
+        <li><span class="dead">Menus</span></li>
+        <li><span class="dead">Plugins</span></li>
+        <li><span class="dead">Users</span></li>
+        <li><span class="dead">Settings</span></li>
+      </ul>
+    </aside>
+
+    <main class="admin-content">
+      <div class="wrap">
+        <h1 id="edit-heading">Edit Case Study</h1>
+
+        <div id="update-notice" class="notice notice-success hidden">
+          <p>Case study updated. Changes in this admin are not saved to the live site.</p>
+        </div>
+
+        <form id="post" action="#" method="get">
+          <div id="poststuff">
+            <div id="post-body-content">
+              <div id="titlewrap">
+                <label class="screen-reader-text" for="title">Title</label>
+                <input type="text" id="title" name="title" placeholder="Enter title here">
+              </div>
+              <p class="permalink">Permalink: <code>case-studies/<span id="permalink-slug">auto-draft</span>.html</code></p>
+
+              <div class="wp-editor-wrap tmce-active" id="wp-content-wrap">
+                <div class="wp-editor-tools">
+                  <div class="wp-media-buttons">
+                    <button type="button" class="button" id="insert-media-button">Add Media</button>
+                  </div>
+                  <div class="wp-editor-tabs">
+                    <button type="button" class="wp-switch-editor switch-tmce" id="content-tmce">Visual</button>
+                    <button type="button" class="wp-switch-editor switch-html" id="content-html">Text</button>
+                  </div>
+                </div>
+                <div class="wp-editor-container">
+                  <div class="mce-toolbar" id="mce-toolbar">
+                    <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
+                    <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
+                    <button type="button" data-cmd="underline" title="Underline"><u>U</u></button>
+                    <button type="button" data-cmd="strikethrough" title="Strikethrough"><s>S</s></button>
+                    <span class="mce-sep"></span>
+                    <button type="button" data-cmd="insertUnorderedList" title="Bullet list">&bull;</button>
+                    <button type="button" data-cmd="insertOrderedList" title="Numbered list">1.</button>
+                    <button type="button" data-cmd="formatBlock" data-value="blockquote" title="Blockquote">&ldquo;</button>
+                    <span class="mce-sep"></span>
+                    <button type="button" data-cmd="justifyLeft" title="Align left">L</button>
+                    <button type="button" data-cmd="justifyCenter" title="Align center">C</button>
+                    <button type="button" data-cmd="justifyRight" title="Align right">R</button>
+                    <span class="mce-sep"></span>
+                    <button type="button" data-cmd="createLink" title="Insert link">Link</button>
+                    <button type="button" data-cmd="unlink" title="Remove link">Unlink</button>
+                    <span class="mce-sep"></span>
+                    <button type="button" data-cmd="formatBlock" data-value="h2" title="Heading">H2</button>
+                    <button type="button" data-cmd="formatBlock" data-value="p" title="Paragraph">P</button>
+                  </div>
+                  <div id="content-visual" class="mce-content-body" contenteditable="true"></div>
+                  <label class="screen-reader-text" for="content">Content</label>
+                  <textarea id="content" name="content"></textarea>
+                </div>
+              </div>
+
+              <section class="postbox">
+                <h2>Custom Fields</h2>
+                <div class="postbox-inside">
+                  <table class="cf-table">
+                    <tr>
+                      <th><label for="cf_client_contact_name">Client contact</label></th>
+                      <td><input type="text" id="cf_client_contact_name"></td>
+                    </tr>
+                    <tr>
+                      <th><label for="cf_client_title">Client title</label></th>
+                      <td><input type="text" id="cf_client_title"></td>
+                    </tr>
+                    <tr>
+                      <th><label for="cf_client_company">Client company</label></th>
+                      <td><input type="text" id="cf_client_company"></td>
+                    </tr>
+                    <tr>
+                      <th><label for="cf_result_stat">Result stat</label></th>
+                      <td><input type="text" id="cf_result_stat"></td>
+                    </tr>
+                    <tr>
+                      <th><label for="seo_title">SEO title</label></th>
+                      <td><input type="text" id="seo_title"></td>
+                    </tr>
+                    <tr>
+                      <th><label for="seo_meta_description">SEO meta description</label></th>
+                      <td><textarea id="seo_meta_description" rows="3"></textarea></td>
+                    </tr>
+                  </table>
+                </div>
+              </section>
+            </div>
+
+            <div id="postbox-container-1">
+              <section class="postbox">
+                <h2>Publish</h2>
+                <div class="postbox-inside">
+                  <div class="misc-pub-section">ID: <strong id="post-id-display">—</strong></div>
+                  <div class="misc-pub-section">
+                    <label for="status">Status:</label>
+                    <select id="status">
+                      <option value="publish">Published</option>
+                      <option value="draft">Draft</option>
+                    </select>
+                  </div>
+                  <div class="misc-pub-section">
+                    <label for="post_date">Published on:</label><br>
+                    <input type="text" id="post_date">
+                  </div>
+                  <div class="misc-pub-section">
+                    <label for="post_author">Author:</label><br>
+                    <input type="text" id="post_author">
+                  </div>
+                  <div class="misc-pub-section">
+                    <label for="slug">Slug:</label><br>
+                    <input type="text" id="slug">
+                  </div>
+                </div>
+                <div class="publishing-actions">
+                  <a id="view-link" class="button" href="#">View</a>
+                  <button type="button" class="button button-primary button-large" id="publish">Update</button>
+                </div>
+              </section>
+
+              <section class="postbox">
+                <h2>Sector</h2>
+                <div class="postbox-inside">
+                  <ul class="category-list">
+                    <li><label><input type="radio" name="sector_radio" value="Hospitality"> Hospitality</label></li>
+                    <li><label><input type="radio" name="sector_radio" value="Property Development"> Property Development</label></li>
+                    <li><label><input type="radio" name="sector_radio" value="Professional Services"> Professional Services</label></li>
+                    <li><label><input type="radio" name="sector_radio" value="Education"> Education</label></li>
+                    <li><label><input type="radio" name="sector_radio" value="Multi-location Services"> Multi-location Services</label></li>
+                  </ul>
+                  <p style="margin-top: 8px;">
+                    <label for="post_category">Category as stored</label>
+                    <input type="text" id="post_category" style="width:100%;margin-top:4px;border:1px solid #c3bdb0;padding:6px 8px;">
+                  </p>
+                </div>
+              </section>
+
+              <section class="postbox">
+                <h2>Featured Image</h2>
+                <div class="postbox-inside">
+                  <img id="featured-preview" class="featured-preview hidden" alt="Featured image">
+                  <label for="featured_image_url">Image URL</label>
+                  <input type="text" id="featured_image_url" style="width:100%;margin-top:4px;border:1px solid #c3bdb0;padding:6px 8px;">
+                </div>
+              </section>
+            </div>
+          </div>
+        </form>
+      </div>
+    </main>
+  </div>
+
+  <script src="case-studies-data.js"></script>
+  <script src="admin.js"></script>
+</body>
+</html>

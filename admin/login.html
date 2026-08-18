@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Log In &lsaquo; Ordinant Carbon Admin</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body class="login-screen">
+
+  <div id="login">
+    <h1>
+      <a href="../index.html">
+        <img src="../ord-logo.png" alt="">
+        Ordinant<span>Carbon</span>
+      </a>
+    </h1>
+    <p class="login-tagline">Staff login</p>
+
+    <div id="login-error" class="login-error hidden">
+      The password you entered for this username is incorrect.
+    </div>
+
+    <form name="loginform" id="loginform" action="login.html" method="post">
+      <p>
+        <label for="user_login">Username</label>
+        <input type="text" name="log" id="user_login" autocomplete="username" value="admin">
+      </p>
+      <p>
+        <label for="user_pass">Password</label>
+        <input type="password" name="pwd" id="user_pass" maxlength="1" autocomplete="current-password" autofocus>
+      </p>
+      <p class="forgetmenot">
+        <label><input name="rememberme" type="checkbox" id="rememberme" value="forever" checked> Remember Me</label>
+      </p>
+      <p class="submit">
+        <button type="submit" name="wp-submit" id="wp-submit" class="button button-primary button-large">Log In</button>
+      </p>
+    </form>
+
+    <p id="nav">
+      <a href="#">Lost your password?</a>
+    </p>
+    <p id="backtoblog">
+      <a href="../index.html">&larr; Back to Ordinant Carbon Solutions</a>
+    </p>
+  </div>
+
+  <script src="auth.js"></script>
+  <script>
+    (function () {
+      var params = new URLSearchParams(location.search);
+      if (params.get("logout") === "1") {
+        window.ordinantAuth.logout();
+      }
+
+      var form = document.getElementById("loginform");
+      var error = document.getElementById("login-error");
+      var password = document.getElementById("user_pass");
+
+      form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        if (password.value === "a") {
+          window.ordinantAuth.login();
+          var next = params.get("redirect") || "index.html";
+          if (next.indexOf("..") !== -1 || next.indexOf("://") !== -1 || next.charAt(0) === "/") {
+            next = "index.html";
+          }
+          location.replace(next);
+          return;
+        }
+        error.classList.remove("hidden");
+        form.classList.remove("shake");
+        void form.offsetWidth;
+        form.classList.add("shake");
+        password.value = "";
+        password.focus();
+      });
+    })();
+  </script>
+</body>
+</html>
