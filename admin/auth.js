@@ -1,6 +1,12 @@
 (function () {
   var KEY = "ordinant_admin_auth";
-  var onLoginPage = /login\.html$/i.test(location.pathname);
+
+  function pageName() {
+    var name = location.pathname.replace(/\/+$/, "").split("/").pop() || "";
+    name = name.replace(/\.html$/i, "");
+    if (!name || name === "admin") return "index";
+    return name;
+  }
 
   function loggedIn() {
     return sessionStorage.getItem(KEY) === "1";
@@ -13,13 +19,14 @@
     logout: function () {
       sessionStorage.removeItem(KEY);
     },
-    ok: loggedIn
+    ok: loggedIn,
+    pageName: pageName
   };
 
-  if (onLoginPage) return;
+  if (pageName() === "login") return;
 
   if (!loggedIn()) {
-    var next = (location.pathname.split("/").pop() || "index.html") + location.search + location.hash;
+    var next = pageName() + ".html" + location.search + location.hash;
     location.replace("login.html?redirect=" + encodeURIComponent(next));
   }
 })();

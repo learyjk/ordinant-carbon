@@ -73,7 +73,15 @@
         if (password.value === "a") {
           window.ordinantAuth.login();
           var next = params.get("redirect") || "index.html";
-          if (next.indexOf("..") !== -1 || next.indexOf("://") !== -1 || next.charAt(0) === "/") {
+          var dest = (next.split("?")[0] || "").split("#")[0].replace(/\.html$/i, "");
+          if (
+            next.indexOf("..") !== -1 ||
+            next.indexOf("://") !== -1 ||
+            next.charAt(0) === "/" ||
+            !dest ||
+            dest === "login" ||
+            dest === "admin"
+          ) {
             next = "index.html";
           }
           location.replace(next);
