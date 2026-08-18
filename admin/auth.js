@@ -33,6 +33,7 @@
     logout: logout,
     ok: loggedIn,
     bindLoginForm: function (form, error, password) {
+      if (!form) return;
       form.addEventListener("submit", function (event) {
         event.preventDefault();
         if (password.value === "a") {
