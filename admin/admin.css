@@ -629,20 +629,43 @@ table.wp-list-table tbody tr:focus-within .row-actions {
 }
 
 .mce-toolbar button {
-  min-width: 28px;
-  height: 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 30px;
+  height: 28px;
   padding: 0 6px;
   border: 1px solid transparent;
   background: transparent;
-  color: #1a1917;
+  color: #3d3d3d;
   font-size: 13px;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 3px;
+}
+
+.mce-toolbar button svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+  pointer-events: none;
+}
+
+.mce-toolbar button.mce-btn-label {
+  min-width: auto;
+  padding: 0 10px;
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
 }
 
 .mce-toolbar button:hover {
   border-color: #c3bdb0;
   background: #ffffff;
+  color: #1a1917;
+}
+
+.mce-toolbar button:active {
+  background: #f0ebe2;
 }
 
 .mce-sep {
@@ -663,6 +686,18 @@ table.wp-list-table tbody tr:focus-within .row-actions {
 
 .mce-content-body p {
   margin: 0 0 1em;
+}
+
+.mce-content-body h2 {
+  font-family: 'Open Sans', Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  margin: 1.25em 0 0.5em;
+  color: #1a1917;
+}
+
+.mce-content-body h2:first-child {
+  margin-top: 0;
 }
 
 .mce-content-body blockquote {

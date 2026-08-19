@@ -80,24 +80,48 @@
                 </div>
                 <div class="wp-editor-container">
                   <div class="mce-toolbar" id="mce-toolbar">
-                    <button type="button" data-cmd="bold" title="Bold"><b>B</b></button>
-                    <button type="button" data-cmd="italic" title="Italic"><i>I</i></button>
-                    <button type="button" data-cmd="underline" title="Underline"><u>U</u></button>
-                    <button type="button" data-cmd="strikethrough" title="Strikethrough"><s>S</s></button>
+                    <button type="button" data-cmd="bold" title="Bold" aria-label="Bold">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 2.5h5.5a3.5 3.5 0 0 1 2.45 6.05A3.5 3.5 0 0 1 11.5 15.5H6V2.5zm2 2v3h3.5a1.5 1.5 0 1 0 0-3H8zm0 5v3.5h4a1.5 1.5 0 1 0 0-3H8z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="italic" title="Italic" aria-label="Italic">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M11 3h-5v1.5h1.7L8.2 15.5H6.5V17h5v-1.5H9.8L11.8 4.5H13V3z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="underline" title="Underline" aria-label="Underline">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M5 3v5.5a5 5 0 0 0 10 0V3h-1.75v5.5a3.25 3.25 0 0 1-6.5 0V3H5zm-1 12.5h12V17H4v-1.5z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="strikethrough" title="Strikethrough" aria-label="Strikethrough">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 10.25h14v1.5H3v-1.5zM7.5 4.5a2.5 2.5 0 0 1 2.1-1.2h.9a2.5 2.5 0 0 1 2.45 2h1.75a4.25 4.25 0 0 0-4.2-3.75h-.9a4.25 4.25 0 0 0-3.55 1.9L7.5 4.5zm5 11a2.5 2.5 0 0 1-2.1 1.2h-.9a2.5 2.5 0 0 1-2.45-2H5.4a4.25 4.25 0 0 0 4.2 3.75h.9a4.25 4.25 0 0 0 3.55-1.9l-1.55-1.05z"/></svg>
+                    </button>
                     <span class="mce-sep"></span>
-                    <button type="button" data-cmd="insertUnorderedList" title="Bullet list">&bull;</button>
-                    <button type="button" data-cmd="insertOrderedList" title="Numbered list">1.</button>
-                    <button type="button" data-cmd="formatBlock" data-value="blockquote" title="Blockquote">&ldquo;</button>
+                    <button type="button" data-cmd="insertUnorderedList" title="Bulleted list" aria-label="Bulleted list">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 5.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm0 4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zm0 4a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5zM7 5.5h10v1.5H7V5.5zm0 4h10v1.5H7V9.5zm0 4h10v1.5H7v-1.5z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="insertOrderedList" title="Numbered list" aria-label="Numbered list">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 4.5h1v1.5H3.5V7H4v1H2.5V4.5H4zm0 4.5h1.5L4 12.5V14H2.5v-1.5L4 10V9.5H2.5V8H4v1zm-.5 5.5h1.75V17H2.5v-1.5h1V14H2.5v-1.5h1.75V14zm4-9.5h10v1.5H7.5V5.5zm0 4h10v1.5H7.5V9.5zm0 4h10v1.5H7.5v-1.5z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="formatBlock" data-value="blockquote" title="Blockquote" aria-label="Blockquote">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 5.5c0-1.5 1-2.5 2.5-2.5.8 0 1.5.3 2 .8L7.8 5.2c-.3-.2-.7-.3-1.1-.3-.8 0-1.2.5-1.2 1.1 0 .4.2.8.5 1.1l.3.3c1 .9 1.5 1.7 1.5 2.8 0 1.5-1 2.7-2.8 2.7-1.8 0-3-1.3-3-3.1 0-.9.3-1.7.8-2.4l1.1 1.1c-.2.3-.3.7-.3 1.1 0 .7.4 1.2 1.1 1.2.7 0 1.1-.5 1.1-1.2 0-.6-.3-1.1-.9-1.6l-.3-.3C4.3 7.8 4 6.9 4 5.5zm8 0c0-1.5 1-2.5 2.5-2.5.8 0 1.5.3 2 .8l-.7 1.4c-.3-.2-.7-.3-1.1-.3-.8 0-1.2.5-1.2 1.1 0 .4.2.8.5 1.1l.3.3c1 .9 1.5 1.7 1.5 2.8 0 1.5-1 2.7-2.8 2.7-1.8 0-3-1.3-3-3.1 0-.9.3-1.7.8-2.4l1.1 1.1c-.2.3-.3.7-.3 1.1 0 .7.4 1.2 1.1 1.2.7 0 1.1-.5 1.1-1.2 0-.6-.3-1.1-.9-1.6l-.3-.3c-.7-.6-1-1.5-1-2.9z"/></svg>
+                    </button>
                     <span class="mce-sep"></span>
-                    <button type="button" data-cmd="justifyLeft" title="Align left">L</button>
-                    <button type="button" data-cmd="justifyCenter" title="Align center">C</button>
-                    <button type="button" data-cmd="justifyRight" title="Align right">R</button>
+                    <button type="button" data-cmd="justifyLeft" title="Align left" aria-label="Align left">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.5h14v1.5H3V4.5zm0 4h10v1.5H3V8.5zm0 4h14v1.5H3v-1.5zm0 4h10v1.5H3V16.5z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="justifyCenter" title="Align center" aria-label="Align center">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.5h14v1.5H3V4.5zm2 4h10v1.5H5V8.5zm-2 4h14v1.5H3v-1.5zm2 4h10v1.5H5V16.5z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="justifyRight" title="Align right" aria-label="Align right">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 4.5h14v1.5H3V4.5zm4 4h10v1.5H7V8.5zm-4 4h14v1.5H3v-1.5zm4 4h10v1.5H7V16.5z"/></svg>
+                    </button>
                     <span class="mce-sep"></span>
-                    <button type="button" data-cmd="createLink" title="Insert link">Link</button>
-                    <button type="button" data-cmd="unlink" title="Remove link">Unlink</button>
+                    <button type="button" data-cmd="createLink" title="Insert link" aria-label="Insert link">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8.2 11.8a3.5 3.5 0 0 0 4.95 0l2.1-2.1a3.5 3.5 0 0 0-4.95-4.95l-.9.9 1.06 1.06.9-.9a1.75 1.75 0 1 1 2.48 2.48l-2.1 2.1a1.75 1.75 0 1 1-2.48-2.48l.9-.9-1.06-1.06-.9.9a3.5 3.5 0 0 0 0 4.95zm3.6-3.6a3.5 3.5 0 0 0-4.95 0l-2.1 2.1a3.5 3.5 0 0 0 4.95 4.95l.9-.9-1.06-1.06-.9.9a1.75 1.75 0 1 1-2.48-2.48l2.1-2.1a1.75 1.75 0 1 1 2.48 2.48l-.9.9 1.06 1.06.9-.9a3.5 3.5 0 0 0 0-4.95z"/></svg>
+                    </button>
+                    <button type="button" data-cmd="unlink" title="Remove link" aria-label="Remove link">
+                      <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M8.2 11.8a3.5 3.5 0 0 0 4.95 0l2.1-2.1a3.5 3.5 0 0 0-4.95-4.95l-.9.9 1.06 1.06.9-.9a1.75 1.75 0 1 1 2.48 2.48l-2.1 2.1a1.75 1.75 0 1 1-2.48-2.48l.9-.9-1.06-1.06-.9.9a3.5 3.5 0 0 0 0 4.95zm3.6-3.6a3.5 3.5 0 0 0-4.95 0l-2.1 2.1a3.5 3.5 0 0 0 4.95 4.95l.9-.9-1.06-1.06-.9.9a1.75 1.75 0 1 1-2.48-2.48l2.1-2.1a1.75 1.75 0 1 1 2.48 2.48l-.9.9 1.06 1.06.9-.9a3.5 3.5 0 0 0 0-4.95z"/><path d="M4 16l12-12" stroke="currentColor" stroke-width="1.5"/></svg>
+                    </button>
                     <span class="mce-sep"></span>
-                    <button type="button" data-cmd="formatBlock" data-value="h2" title="Heading">H2</button>
-                    <button type="button" data-cmd="formatBlock" data-value="p" title="Paragraph">P</button>
+                    <button type="button" data-cmd="formatBlock" data-value="h2" title="Heading 2" aria-label="Heading 2" class="mce-btn-label">Heading</button>
+                    <button type="button" data-cmd="formatBlock" data-value="p" title="Paragraph" aria-label="Paragraph" class="mce-btn-label">Paragraph</button>
                   </div>
                   <div id="content-visual" class="mce-content-body" contenteditable="true"></div>
                   <label class="screen-reader-text" for="content">Content</label>

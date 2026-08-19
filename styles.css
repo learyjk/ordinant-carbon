@@ -564,6 +564,55 @@ a.case-study-card-full:hover {
   margin-bottom: 16px;
 }
 
+.detail-content h2 {
+  font-family: 'Lato', Arial, sans-serif;
+  font-size: 22px;
+  color: #1a1917;
+  margin: 28px 0 12px;
+}
+
+.detail-content h2:first-child {
+  margin-top: 0;
+}
+
+.detail-content ul,
+.detail-content ol {
+  margin: 0 0 16px 22px;
+  font-size: 15.5px;
+  color: #66645f;
+}
+
+.detail-content li {
+  margin-bottom: 6px;
+}
+
+.detail-content blockquote {
+  margin: 0 0 16px;
+  padding: 14px 18px;
+  border-left: 4px solid #992e00;
+  background: #faf7f0;
+  font-style: italic;
+  color: #4a4843;
+}
+
+.detail-content blockquote p {
+  margin-bottom: 0;
+}
+
+.detail-content strong {
+  color: #1a1917;
+  font-weight: 700;
+}
+
+.detail-content em {
+  font-style: italic;
+}
+
+.detail-content a {
+  color: #992e00;
+  text-decoration: underline;
+}
+
 .detail-client {
   margin-top: 28px;
   padding-top: 22px;
