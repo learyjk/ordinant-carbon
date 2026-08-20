@@ -1,0 +1,6 @@
+# Cloudflare Pages redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+/solutions              /platform.html       301
+/resources/case-studies /case-studies.html   301
+/team                   /about.html          301
