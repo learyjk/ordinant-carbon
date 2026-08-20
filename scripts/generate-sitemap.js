@@ -36,7 +36,8 @@ var staticPages = [
   { path: "/", lastmod: "2023-06-01", changefreq: "monthly", priority: "1.0" },
   { path: "/platform.html", lastmod: "2022-11-15", changefreq: "monthly", priority: "0.8" },
   { path: "/about.html", lastmod: "2023-01-10", changefreq: "monthly", priority: "0.8" },
-  { path: "/case-studies.html", lastmod: "2023-03-01", changefreq: "weekly", priority: "0.9" }
+  { path: "/case-studies.html", lastmod: "2023-03-01", changefreq: "weekly", priority: "0.9" },
+  { path: "/customer-stories.html", lastmod: "2020-03-15", changefreq: "yearly", priority: "0.5" }
 ];
 
 var publishedStudies = CASE_STUDIES.filter(function (row) {
