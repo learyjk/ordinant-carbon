@@ -787,19 +787,6 @@ a.case-study-card-full:hover {
   color: #992e00;
 }
 
-.legacy-stories-banner {
-  background: #faf7f0;
-  border: 1px solid #e6e6e6;
-  padding: 14px 18px;
-  margin-bottom: 22px;
-  font-size: 14.5px;
-  color: #66645f;
-}
-
-.legacy-stories-banner a {
-  color: #992e00;
-  font-weight: 600;
-}
 
 /* Contact form */
 
